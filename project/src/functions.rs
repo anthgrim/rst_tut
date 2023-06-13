@@ -1,5 +1,7 @@
 #![allow(unused)]
 
+use std::ops::Add;
+
 fn say_hi() -> () {
     println!("Hi")
 }
@@ -27,6 +29,11 @@ fn sum_list(list: &[i32]) -> i32 {
         sum += &val;
     }
     sum
+}
+
+// Generics
+fn get_sum_generic<T: Add<Output = T>>(x: T, y: T) -> T {
+    x + y
 }
 
 fn main() {
